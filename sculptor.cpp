@@ -65,7 +65,6 @@ void Sculptor::setColor(float _r, float _g, float _b, float _a){
     r = _r;
     g = _g; //CORES BÁSICAS
     b = _b;
-
     a = _a; //TRANSPARENCIA
 }
 
@@ -81,92 +80,6 @@ void Sculptor::putVoxel(int x, int y, int z){
 //RETIRAR ANIMACAO DE VOXEL POR POSIÇÃO
 void Sculptor::cutVoxel(int x, int y, int z){
    v[x][y][z].show = false;
-}
-
-//ANIMANDO OS VOXELS EM FORMA DE CUBO
-void Sculptor::putBox(int x0, int x1, int y0, int y1, int z0, int z1){
-   for(int i=x0; i<x1; i++){
-        for(int j=y0; j<y1; j++){
-            for(int k=z0; k<z1; k++){
-                v[i][j][k].show = true;
-                v[i][j][k].r = r;
-                v[i][j][k].g = g;
-                v[i][j][k].b = b;
-                v[i][j][k].a = a;
-            }
-        }
-   }
-}
-
-//RETIRAR ANIMACAO DE VOXEL EM FORMA DE CUBO
-void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){
-   for(int i=x0; i<x1; i++){
-        for(int j=y0; j<y1; j++){
-            for(int k=z0; k<z1; k++){
-                v[i][j][k].show = false;
-            }
-        }
-   }
-}
-
-//ANIMANDO OS VOXELS EM FORMA DE UMA ESFERA
-void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
-   for(int i=0; i<nx; i++){
-        for(int j=0; j<ny; j++){
-            for(int k=0; k<nz; k++){
-                if((pow((i-xcenter), 2) + pow((j-ycenter), 2) + pow((k-zcenter), 2)) < pow(radius, 2)){
-                    putVoxel(i, j, k);
-                }
-            }
-        }
-   }
-}
-
-//RETIRAR ANIMACAO DE VOXELS EM FORMA DE ESFERA
-void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
-   for(int i=0; i<nx; i++){
-        for(int j=0; j<ny; j++){
-            for(int k=0; k<nz; k++){
-                if((pow((i-xcenter), 2) + pow((j-ycenter), 2) + pow((k-zcenter), 2)) < pow(radius, 2)){
-                    cutVoxel(i, j, k);
-                }
-            }
-        }
-   }
-}
-
-//ANIMANDO OS VOXELS EM FORMA DE ELIPSOIDE
-void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
-    float xEllipsoid, yEllipsoid, zEllipsoid;
-    for(int i=0; i<nx; i++){
-        for(int j=0; j<ny; j++){
-            for(int k=0; k<nz; k++){
-                xEllipsoid = pow(i-xcenter, 2)/pow(rx, 2);
-                yEllipsoid = pow(j-ycenter, 2)/pow(ry, 2);
-                zEllipsoid = pow(k-zcenter, 2)/pow(rz, 2);
-                if((xEllipsoid + yEllipsoid + zEllipsoid) < 1){
-                    putVoxel(i, j, k);
-                }
-            }
-        }
-   }
-}
-
-//RETIRAR ANIMACAO DE VOXELS EM FORMA DE ELLIPSOID
-void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
-   float xEllipsoid, yEllipsoid, zEllipsoid;
-   for(int i=0; i<nx; i++){
-        for(int j=0; j<ny; j++){
-            for(int k=0; k<nz; k++){
-                xEllipsoid = pow(i-xcenter, 2)/pow(rx, 2);
-                yEllipsoid = pow(j-ycenter, 2)/pow(ry, 2);
-                zEllipsoid = pow(k-zcenter, 2)/pow(rz, 2);
-                if((xEllipsoid + yEllipsoid + zEllipsoid) < 1){
-                    cutVoxel(i, j, k);
-                }
-            }
-        }
-   }
 }
 
 //DEFININDO O METODO CRIADOR DO ARQUIVO OFF
