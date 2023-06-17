@@ -43,19 +43,6 @@ int main(){
     teste.cutVoxel(46, 50, 50);
 
 
-    //DEFININDO UMA ESFERA BÁSICA
-    teste.setColor(0, 0, 1, 1);
-    teste.putSphere(85, 75, 50, 15);
-    //DEFININDO UM CORTE DENTRO DA ESFERA
-    teste.cutSphere(85, 75, 50, 14);
-
-
-    //DEFININDO UM ELIPSOIDE SIMPLES
-    teste.setColor(1, 0, 0, 1);
-    teste.putEllipsoid(14, 75, 50, 15, 15, 25);
-    //DEFININDO UM CORTE DENTRO DE UM ELIPSOIDE
-    teste.cutEllipsoid(14, 75, 50, 14, 14, 24);
-
 
     teste.writeOFF("teste.off");
 

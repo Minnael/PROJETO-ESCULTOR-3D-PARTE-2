@@ -1,13 +1,6 @@
 #ifndef SCULPTOR_H
 #define SCULPTOR_H
-
-//#include "Voxel.h"
-
-struct Voxel {
-    float r,g,b; //cores
-    float a;     //transparencia
-    bool show;   //incluir ou nao o voxel
-};
+#include "Voxel.h"
 
 class Sculptor {
 private:
