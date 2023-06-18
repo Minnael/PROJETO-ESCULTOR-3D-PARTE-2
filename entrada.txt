@@ -5,3 +5,4 @@ putsphere 85 75 50 15 0.0 0.0 1.0 1.0
 cutsphere 85 75 50 14
 putellipsoid 14 75 50 15 15 25 1.0 0.0 0.0 1.0
 cutellipsoid 14 75 50 14 14 24
+putvoxel 50 75 50 1.0 0.0 0.0 1.0

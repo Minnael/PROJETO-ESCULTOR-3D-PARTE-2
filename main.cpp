@@ -16,8 +16,7 @@
 #include "FiguraGeometrica.h"
 using namespace std;
 
-int main()
-{
+int main(){
     Sculptor *sx;
     Interpretador anl;
     vector<FiguraGeometrica*> fig;

@@ -12,17 +12,16 @@
 #include "CutBox.h"
 #include "cutSphere.h"
 #include "cutEllipsoid.h"
-
-using namespace std;
 #include "interpretador.h"
 
-Interpretador::Interpretador()
-{
-}
+
+using namespace std;
+
+Interpretador::Interpretador(){}
 
 vector<FiguraGeometrica*> Interpretador:: anl(string filename){
 
-    vector<FiguraGeometrica*> figuras; // onde será armazenado os desenhos
+    vector<FiguraGeometrica*> figuras;
     ifstream arqv;
     string stng,pp;
     stringstream ss;
@@ -56,7 +55,6 @@ vector<FiguraGeometrica*> Interpretador:: anl(string filename){
         else if(pp.compare("putbox")==0){
             int x0; int x1; int y0; int y1; int z0; int z1;
             ss >> x0 >> x1 >> y0 >> y1 >> z0 >> z1 >> r >> g >> b >> a;
-            //cout << x0<< x1 << y0 << y1 << z0 << z1 << r << g << b << a << endl;
             figuras.push_back(new PutBox(x0,x1,y0, y1, z0,z1, r, g, b, a));
         }
         else if(pp.compare("cutbox")==0){
@@ -90,17 +88,14 @@ vector<FiguraGeometrica*> Interpretador:: anl(string filename){
     return(figuras);
 }
 
-int Interpretador::getdimx()
-{
+int Interpretador::getdimx(){
     return dimx;
 }
 
-int Interpretador::getdimy()
-{
+int Interpretador::getdimy(){
     return dimy;
 }
 
-int Interpretador::getdimz()
-{
+int Interpretador::getdimz(){
     return dimz;
 }
