@@ -2,10 +2,14 @@
 #define FIGURAGEOMETRICA_H
 #include "sculptor.h"
 
-class FiguraGeometrica{
+// Classe abstrata
+class FiguraGeometrica
+{
+protected:
+    float r,g,b,a; // as subclasses devem herdar as cores e transparência
 public:
-    virtual void draw(Sculptor &t) = 0;
-
+    virtual void draw(Sculptor &t)=0;
+    virtual ~FiguraGeometrica(){};
 };
 
-#endif
+#endif // FIGURAGEOMETRICA_H

@@ -9,7 +9,7 @@ Sculptor::Sculptor(int _nx, int _ny, int _nz){
     nx = _nx;
     ny = _ny;
     nz = _nz;
-    r = g = b = a = 0; //DEFININDO CORES/TRANSPARENCIA
+    r = g = b = a = 0.5; //DEFININDO CORES/TRANSPARENCIA
 
     //ALOCAÇÃO DA MATRIZ 3D
     v = new Voxel**[nx];

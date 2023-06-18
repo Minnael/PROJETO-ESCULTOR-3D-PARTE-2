@@ -1,16 +1,15 @@
-#ifndef PUTSPHERE_H
-#define PUTSPHERE_H
-#include "FiguraGeometrica.h"
-#include "sculptor.h"
+#ifndef CUTSPHERE_H
+#define CUTSPHERE_H
 
-class CutSphere : public FiguraGeometrica{
-protected:
-    int xcenter, ycenter, zcenter, radius;
+#include "figurageometrica.h"
 
+class CutSphere : public FiguraGeometrica
+{
+    int xcenter; int ycenter; int zcenter; int radius;
 public:
-    CutSphere(int _xcenter, int _ycenter, int _zcenter, int _radius);
+    CutSphere(int xcenter, int ycenter, int zcenter, int radius);
     void draw(Sculptor &t);
+    ~CutSphere(){};
 };
 
-
-#endif
+#endif // CUTSPHERE_H

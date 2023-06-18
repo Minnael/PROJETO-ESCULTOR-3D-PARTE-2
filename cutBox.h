@@ -1,16 +1,15 @@
-#ifndef PUTBOX_H
-#define PUTBOX_H
+#ifndef CUTBOX_H
+#define CUTBOX_H
+
 #include "FiguraGeometrica.h"
-#include "sculptor.h"
 
-
-class CutBox : public FiguraGeometrica{
-protected:
-    int x0, x1, y0, y1, z0, z1;
-
+class CutBox : public FiguraGeometrica
+{
+    int x0; int x1; int y0; int y1; int z0; int z1;
 public:
-    CutBox(int _x0, int _x1, int _y0, int _y1, int _z0, int _z1);
+    CutBox(int x0, int x1, int y0, int y1, int z0, int z1);
+    ~CutBox(){};
     void draw(Sculptor &t);
 };
 
-#endif
+#endif // CUTBOX_H
